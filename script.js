@@ -1,8 +1,8 @@
 const theme = window.matchMedia("(prefers-color-scheme: dark)");
 if (theme.matches === true) {
-    setFavicons("./assets/pen-light.svg")
+    setFavicons("./public/assets/pen-light.svg")
 } else {
-    setFavicons("./assets/pen-dark.svg")
+    setFavicons("./public/assets/pen-dark.svg")
 }
 
 let container = document.querySelector('.container');
