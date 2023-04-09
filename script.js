@@ -1,3 +1,10 @@
+const theme = window.matchMedia("(prefers-color-scheme: dark)");
+if (theme.matches === true) {
+    setFavicons("./assets/pen-light.svg")
+} else {
+    setFavicons("./assets/pen-dark.svg")
+}
+
 let container = document.querySelector('.container');
 let squareNum = 8;
 
@@ -68,6 +75,14 @@ eraseButton.addEventListener('click', () => {
         });
     });
 });
+function setFavicons(path) {
+    const head = document.querySelector('head');
+    const favicon = document.createElement('link');
+    favicon.setAttribute('rel', 'icon"');
+    favicon.setAttribute('type', 'image/x-icon');
+    favicon.setAttribute('href', path);
+    head.appendChild(favicon);
+}
 
 function getRandomColor(colors) {
     return colors[Math.floor(Math.random() * 7)];
