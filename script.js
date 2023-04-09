@@ -78,10 +78,11 @@ eraseButton.addEventListener('click', () => {
 function setFavicons(path) {
     const head = document.querySelector('head');
     const favicon = document.createElement('link');
-    favicon.setAttribute('rel', 'icon"');
+    favicon.setAttribute('rel', 'icon');
     favicon.setAttribute('type', 'image/x-icon');
     favicon.setAttribute('href', path);
     head.appendChild(favicon);
+    console.log(head);
 }
 
 function getRandomColor(colors) {
