@@ -1,8 +1,8 @@
 const theme = window.matchMedia("(prefers-color-scheme: dark)");
 if (theme.matches === true) {
-    setFavicons("./public/assets/pen-light.svg")
+    setFavicons("/assets/pen-light.svg")
 } else {
-    setFavicons("./public/assets/pen-dark.svg")
+    setFavicons("/public/assets/pen-dark.svg")
 }
 
 let container = document.querySelector('.container');
@@ -82,7 +82,6 @@ function setFavicons(path) {
     favicon.setAttribute('type', 'image/x-icon');
     favicon.setAttribute('href', path);
     head.appendChild(favicon);
-    console.log(head);
 }
 
 function getRandomColor(colors) {
