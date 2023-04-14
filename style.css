@@ -5,25 +5,32 @@
 
 :root {
     --gridSize: 0;
-    --background: #111111;
-    --foreground: #212227;
+
+    --dark-background: #111111;
+    --light-background: #ffffff;
+    --border: #212227;
     --accent: #7266ee;
     --glow: rgba(114, 102, 238, 0.25);
     --neutral: #5f616c;
     --text: #ffffff;
-
 }
 
-.container {
+body {
+    background-color: var(--dark-background);
+    color: var(--text);
+}
+
+.gridContainer {
     display: grid;
     grid-template-columns: repeat(var(--gridSize), 1fr);
     grid-template-rows: repeat(var(--gridSize), 1fr);
+    background-color: var(--light-background);
     width: 400px;
     height: 400px;
     outline: 2px solid var(--neutral);
 }
 
-.slider {
+input[type="range"] {
     appearance: none;
     width: 200px;
     height: 8px;
@@ -31,43 +38,53 @@
     background: var(--neutral);
     outline: none;
     opacity: 0.75;
-    transition: opacity .2s;
+    transition: opacity .2s ease-in-out;
 }
 
-.slider:hover {
-    opacity: 1;
-}
-
-.slider::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb {
     appearance: none;
     width: 25px;
     height: 25px;
     border-radius: 50%;
     background: var(--accent);
-    border: 1px solid var(--foreground);
+    border: 1px solid var(--border);
     cursor: pointer;
 }
 
-.color-picker {
+input[type="range"]:hover {
+    opacity: 1;
+}
+
+input[type="color"] {
     appearance: none;
-    background: none;
+    outline: none;
     border: none;
-    width: 100px;
-    height: 50px;
-}
-
-.color-picker::-webkit-color-swatch {
+    background-color: rgba(0, 0, 0, 0);
     border-radius: 6px;
+    width: 100px;
+    height: 40px;
 }
 
-.color-picker:hover {
+input[type='color']::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: 2px solid var(--border);
+    border-radius: 6px;
+    transition: box-shadow 0.25s ease-in-out;
+}
+
+input[type="color"]:hover {
     cursor: pointer;
+    box-shadow: 0 0 6px 6px var(--glow);
+
 }
 
 button {
     background-color: var(--accent);
     color: var(--text);
-    border: none;
+    border: 2px solid var(--border);
     font-size: 22px;
     border-radius: 6px;
     width: 100px;
