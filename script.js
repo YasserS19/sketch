@@ -6,16 +6,6 @@ const rainbowBtn = document.querySelector(".rainbow");
 const colorPicker = document.querySelector(".color-picker");
 const slider = document.querySelector(".slider");
 
-const rainbowColors = [
-  "#ff0000",
-  "#ffa500",
-  "#ffff00",
-  "#008000",
-  "#0000ff",
-  "#4b0082",
-  "#ee82ee",
-];
-
 let gridContainer = document.querySelector(".gridContainer");
 let gridSize = 8;
 let penColor = "black";
@@ -43,7 +33,7 @@ colorBtn.addEventListener("click", () => {
 rainbowBtn.addEventListener("click", () => {
   grid.forEach((cell) => {
     cell.addEventListener("mouseover", () => {
-      cell.style.backgroundColor = getRainbowColor(rainbowColors);
+      cell.style.backgroundColor = getRainbowColor();
     });
   });
 });
@@ -79,12 +69,24 @@ function setEventListeners(color) {
   });
 }
 
-function getRainbowColor(rainbowColors) {
-  return rainbowColors[Math.floor(Math.random() * 7)];
+function getRainbowColor() {
+  const rainbowColors = [
+    "#ff0000",
+    "#ffa500",
+    "#ffff00",
+    "#008000",
+    "#0000ff",
+    "#4b0082",
+    "#ee82ee",
+  ];
+  const newLocal =
+    rainbowColors[Math.floor(Math.random() * rainbowColors.length)];
+  return newLocal;
 }
 
 function createGrid(num) {
   gridContainer.innerHTML = "";
+
   for (let i = 0; i < num * num; i++) {
     const div = document.createElement("div");
     div.classList.add("cell");
