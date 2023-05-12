@@ -15,7 +15,7 @@ let grid = createGrid(gridSize);
 
 setFavicons();
 
-colorPicker.addEventListener("input", () => {
+colorPicker.addEventListener("change", () => {
   penColor = colorPicker.value;
   setEventListeners(penColor);
 });
