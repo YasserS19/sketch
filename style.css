@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: "MotivaSans";
-    src: url("public/assets/MotivaSans.woff");
+    src: url("/assets/MotivaSans.woff");
 }
 
 :root {
@@ -134,6 +134,7 @@ button:hover {
 footer {
     font-size: 1.25em;
     margin-top: 5vh;
+    margin: 5vh 0 5vh 0;
 }
 
 footer a {
