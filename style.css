@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: "MotivaSans";
-    src: url("assets/MotivaSans.woff");
+    src: url("public/assets/MotivaSans.woff");
 }
 
 :root {
