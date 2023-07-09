@@ -5,6 +5,7 @@ const resetBtn = document.querySelector(".reset");
 const rainbowBtn = document.querySelector(".rainbow");
 const colorPicker = document.querySelector(".color-picker");
 const slider = document.querySelector(".slider");
+const sliderLabel = document.querySelector(".sliderLabel");
 
 let gridContainer = document.querySelector(".gridContainer");
 let gridSize = 8;
@@ -22,6 +23,7 @@ colorPicker.addEventListener("change", () => {
 
 slider.addEventListener("change", () => {
   grid = createGrid(slider.value);
+  sliderLabel.textContent = `Grid Size: ${slider.value} x ${slider.value}`;
   root.style.setProperty("--gridSize", slider.value);
   setEventListeners(penColor);
 });

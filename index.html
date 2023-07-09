@@ -9,14 +9,28 @@
   <link rel="stylesheet" type="text/css" href="./style.css" />
 </head>
 
+
+
 <body>
-  <input type="range" min="8" max="128" value="8" step="2" class="slider" />
-  <input type="color" class="color-picker" />
-  <button class="color">Color</button>
-  <button class="rainbow">Rainbow</button>
-  <button class="eraser">Eraser</button>
-  <button class="reset">Reset</button>
-  <div class="gridContainer"></div>
+  <h1>Sketchies</h1>
+  <div class="container">
+    <div class=" inputs">
+      <label for="slider" class="sliderLabel">Grid Size: 8 x 8 </label>
+      <input type="range" min="8" max="128" value="8" step="2" class="slider" id="slider" />
+      <input type="color" class="color-picker" />
+      <button class="color">Color</button>
+      <button class="rainbow">Rainbow</button>
+      <button class="eraser">Eraser</button>
+      <button class="reset">Reset</button>
+    </div>
+    <div class="gridContainer"></div>
+  </div>
+  <footer>
+    <p>
+      Yasser S.<a href="https://github.com/YasserS19/skechies">
+        <img src="./assets/github.svg" /></a>
+    </p>
+  </footer>
 </body>
 
 </html>

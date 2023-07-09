@@ -3,6 +3,11 @@
     margin: 0;
 }
 
+@font-face {
+    font-family: "MotivaSans";
+    src: url("assets/MotivaSans.woff");
+}
+
 :root {
     --dark-background: #111111;
     --light-background: #ffffff;
@@ -11,11 +16,41 @@
     --glow: rgba(114, 102, 238, 0.25);
     --neutral: #5f616c;
     --text: #ffffff;
+    font-family: 'MotivaSans', sans-serif;
+
+}
+
+h1 {
+    font-size: 2em;
+    margin-top: 5vh;
 }
 
 body {
+    gap: 5vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100vw;
     background-color: var(--dark-background);
     color: var(--text);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20vh;
+    width: 100vw;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
 }
 
 .gridContainer {
@@ -23,9 +58,9 @@ body {
     grid-template-columns: repeat(var(--gridSize), 1fr);
     grid-template-rows: repeat(var(--gridSize), 1fr);
     background-color: var(--light-background);
-    width: 960px;
-    height: 960px;
-    outline: 2px solid var(--neutral);
+    width: 35vw;
+    height: 35vw;
+    outline: 2px solid var(--border);
 }
 
 input[type="range"] {
@@ -59,7 +94,7 @@ input[type="color"] {
     border: none;
     background-color: rgba(0, 0, 0, 0);
     border-radius: 6px;
-    width: 100px;
+    width: 150px;
     height: 40px;
 }
 
@@ -85,7 +120,8 @@ button {
     border: 2px solid var(--border);
     font-size: 22px;
     border-radius: 6px;
-    width: 100px;
+    width: 150px;
+    font-family: 'MotivaSans', sans-serif;
     height: 40px;
     transition: box-shadow 0.25s ease-in-out;
 }
@@ -93,4 +129,24 @@ button {
 button:hover {
     box-shadow: 0 0 6px 6px var(--glow);
     cursor: pointer;
+}
+
+footer {
+    font-size: 1.25em;
+    margin-top: 5vh;
+}
+
+footer a {
+    margin: 0 1em;
+    text-decoration: none;
+}
+
+footer img {
+    height: 1em;
+    transition: transform 0.3s ease-in-out;
+
+}
+
+footer img:hover {
+    transform: rotate(360deg) scale(1.2);
 }
