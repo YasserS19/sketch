@@ -7,6 +7,8 @@ const colorPicker = document.querySelector(".color-picker");
 const slider = document.querySelector(".slider");
 const sliderLabel = document.querySelector(".sliderLabel");
 
+
+
 let gridContainer = document.querySelector(".gridContainer");
 let gridSize = 8;
 let penColor = "black";
@@ -96,6 +98,7 @@ function createGrid(num) {
     div.addEventListener("mouseover", () => {
       div.style.backgroundColor = penColor;
     });
+
     gridContainer.appendChild(div);
   }
   gridContainer = document.querySelector(".gridContainer");
